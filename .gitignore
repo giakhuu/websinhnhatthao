@@ -1,0 +1,9 @@
+**/node_modules/
+**/.wrangler/
+**/.openai/
+**/.env
+**/.env.*
+**/.dev.vars
+**/.dev.vars.*
+.local-tools/
+*.log

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#faf8f2" />
+  <meta name="description" content="Một góc nhỏ đầy yêu thương, những bất ngờ xinh xắn và một chiếc bánh sinh nhật dành riêng cho Thảo. Chúc em một tuổi mới thật rực rỡ!" />
+  <meta property="og:title" content="Thảo ơi, hôm nay là ngày của em! ♡" />
+  <meta property="og:description" content="Có một chiếc bánh, một lá thư và thật nhiều yêu thương đang chờ em." />
+  <title>Thảo ơi, sinh nhật vui vẻ! ♡</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;450;500;550;600;650;700;750;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Đến nội dung chính</a>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="cursor-sparkles" id="sparkles" aria-hidden="true"></div>
+  <header class="header wrap">
+    <a class="brand" href="#" aria-label="Thảo's day — về đầu trang"><span class="brand-flower" aria-hidden="true">✳</span> thảo’s day<span class="brand-period">.</span></a>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="#surprises">Quà nhỏ</a>
+      <a href="#letter">Lời yêu thương</a>
+      <a href="#wish">Điều ước</a>
+    </nav>
+    <button class="music-button" id="music-button" type="button" aria-pressed="false" aria-label="Bật nhạc sinh nhật">
+      <span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="music-label">Bật chút nhạc</span>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✦</span> MỘT NGÀY THẬT ĐẶC BIỆT</p>
+        <h1 id="hero-title">Hôm nay là<br /> ngày của <span class="name">Thảo<span class="name-heart" aria-hidden="true">♡</span></span></h1>
+        <p class="hero-description">Chúc mừng sinh nhật cô gái anh thương.<br />Thế giới có thể rất rộng, nhưng hôm nay,<br class="desktop-break" /> mọi điều dễ thương đều dành cho em.</p>
+        <div class="hero-actions">
+          <button class="button button-dark" id="hero-surprise" type="button">Mở quà của em <span aria-hidden="true">↗</span></button>
+          <button class="text-button" id="letter-shortcut" type="button"><span aria-hidden="true">♡</span> Có thư cho em</button>
+        </div>
+        <div class="hero-footnote"><span class="little-daisy" aria-hidden="true">✿</span><span>Một chiếc web nhỏ.<br /><strong>Một tình yêu thiệt to.</strong></span><svg class="hand-arrow" viewBox="0 0 94 50" fill="none" aria-hidden="true"><path d="M3 38C31 50 65 42 72 10M58 19 73 7l10 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+
+      <div class="hero-art" id="hero-art">
+        <div class="cake-backdrop" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="backdrop-dot dot-one"></span><span class="backdrop-dot dot-two"></span></div>
+        <span class="floating-star star-a" aria-hidden="true">✦</span><span class="floating-star star-b" aria-hidden="true">✧</span><span class="floating-star star-c" aria-hidden="true">✦</span>
+        <span class="floating-heart heart-a" aria-hidden="true">♡</span><span class="floating-heart heart-b" aria-hidden="true">♥</span>
+        <div class="birthday-sticker" aria-hidden="true"><span>birthday</span><strong>girl</strong><svg viewBox="0 0 60 16"><path d="M3 10 Q18 2 29 10 T57 7" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div class="wish-handwriting" aria-hidden="true">make a wish <span>↴</span></div>
+        <svg class="cake-illustration" id="cake" viewBox="0 0 540 530" role="img" aria-label="Bánh sinh nhật màu hồng với năm ngọn nến lung linh dành tặng Thảo">
+          <defs>
+            <linearGradient id="cake-body" x1="0" x2="1"><stop stop-color="#efb3c4"/><stop offset=".25" stop-color="#ffd5dc"/><stop offset=".75" stop-color="#fbc7d4"/><stop offset="1" stop-color="#eaa1ba"/></linearGradient>
+            <linearGradient id="top-body" x1="0" x2="1"><stop stop-color="#f3bdce"/><stop offset=".35" stop-color="#ffe3e5"/><stop offset="1" stop-color="#efb6cc"/></linearGradient>
+            <linearGradient id="plate" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fffcf3"/><stop offset="1" stop-color="#e6d9ee"/></linearGradient>
+            <linearGradient id="stand" x1="0" x2="1"><stop stop-color="#d0b6df"/><stop offset=".5" stop-color="#f7edff"/><stop offset="1" stop-color="#c4a4d5"/></linearGradient>
+            <linearGradient id="flame" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#ffda73"/><stop offset=".7" stop-color="#ffad61"/><stop offset="1" stop-color="#ef826d"/></linearGradient>
+            <pattern id="candle-stripe" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><rect width="12" height="12" fill="#fff9e9"/><rect width="5" height="12" fill="#a98bc6"/></pattern>
+            <filter id="cake-shadow"><feGaussianBlur stdDeviation="9"/></filter>
+          </defs>
+          <ellipse cx="272" cy="481" rx="155" ry="17" fill="#9972b6" opacity=".15" filter="url(#cake-shadow)"/>
+          <path d="M242 409 Q254 438 244 456 L218 468 Q270 487 322 468 L296 456 Q286 438 298 409Z" fill="url(#stand)"/>
+          <ellipse cx="270" cy="469" rx="54" ry="11" fill="#eee0f6"/>
+          <ellipse cx="270" cy="409" rx="181" ry="35" fill="#c5a8d9"/>
+          <path d="M89 398V408C89 453 451 453 451 408V398Z" fill="url(#plate)"/>
+          <ellipse cx="270" cy="398" rx="181" ry="36" fill="#fffaf0"/>
+          <ellipse cx="270" cy="397" rx="157" ry="26" fill="#d8bddb" opacity=".6"/>
+          <path d="M120 300V371C120 421 420 421 420 371V300Z" fill="url(#cake-body)"/>
+          <path d="M121 347C165 383 378 383 419 347V360C372 398 166 396 121 360Z" fill="#e48fae" opacity=".65"/>
+          <path d="M121 351C169 387 369 386 419 351" fill="none" stroke="#fff1e6" stroke-width="9"/>
+          <ellipse cx="270" cy="300" rx="150" ry="43" fill="#fff2e9"/>
+          <path d="M120 301C124 326 141 316 147 336 151 352 164 352 169 332 175 314 185 330 194 322 204 316 206 343 216 341 229 339 222 323 238 324 252 326 247 346 262 345 279 343 270 327 285 327 300 327 291 352 308 349 321 348 310 325 328 325 341 325 338 337 348 337 364 338 352 320 368 317 384 315 378 334 390 333 404 332 399 318 410 313L420 301C388 338 153 343 120 301Z" fill="#fff2e9"/>
+          <path d="M167 239V288C167 324 373 324 373 288V239Z" fill="url(#top-body)"/>
+          <path d="M168 271C204 297 338 298 372 271" fill="none" stroke="#fff1e6" stroke-width="7"/>
+          <ellipse cx="270" cy="239" rx="103" ry="31" fill="#fff5e9"/>
+          <path d="M167 239C176 266 187 244 193 264 199 281 210 270 211 259 212 247 224 255 228 259 238 270 247 269 249 256 252 243 267 260 277 258 286 256 287 276 297 274 311 273 304 251 319 251 332 253 325 269 340 266 348 264 345 247 358 249 366 251 368 244 373 239C333 269 201 268 167 239Z" fill="#fff5e9"/>
+          <g class="cake-sprinkles" stroke-width="4" stroke-linecap="round"><path d="m143 365 4 5m43 7 5-2m188-6 3 5m-46 12 4-2" stroke="#ab80c9"/><path d="m153 387 4-2m67 1 3 5m137 2 4-4" stroke="#fff8df"/><path d="m202 282 4 3m130 0 4-2" stroke="#bc8bba"/></g>
+          <g class="candles" fill="url(#candle-stripe)" stroke="#b69ac5" stroke-width=".7"><rect x="204" y="170" width="12" height="66" rx="3"/><rect x="235" y="153" width="12" height="79" rx="3"/><rect x="266" y="137" width="12" height="94" rx="3"/><rect x="297" y="153" width="12" height="79" rx="3"/><rect x="328" y="170" width="12" height="66" rx="3"/></g>
+          <g stroke="#69506e" stroke-width="2" stroke-linecap="round"><path d="M210 171v-8m31-9v-9m31-8v-9m31 26v-9m31 26v-8"/></g>
+          <g class="flame-group" fill="url(#flame)"><path class="flame flame-one" d="M210 164C194 159 205 142 210 137 215 146 225 158 210 164Z"/><path class="flame flame-two" d="M241 146C225 141 237 124 241 119 247 128 257 140 241 146Z"/><path class="flame flame-three" d="M272 130C256 125 267 108 272 103 277 112 287 124 272 130Z"/><path class="flame flame-four" d="M303 146C287 141 298 124 303 119 308 128 318 140 303 146Z"/><path class="flame flame-five" d="M334 164C318 159 329 142 334 137 339 146 349 158 334 164Z"/></g>
+          <g class="strawberry" transform="translate(161 290) rotate(-15)"><path d="M0 0C-20-22-26 14-5 26 13 31 27-9 0 0Z" fill="#df7089"/><path d="m-2 1-9-9 10 4L5-13 6-3l10-2-9 8Z" fill="#8d9b70"/><g stroke="#ffe5b4" stroke-width="2.5" stroke-linecap="round"><path d="m-11 9 1 2m11 1 1 2m-8 7 1 2m15-16 1 2"/></g></g>
+          <g class="strawberry" transform="translate(373 290) rotate(22)"><path d="M0 0C-20-22-26 14-5 26 13 31 27-9 0 0Z" fill="#df7089"/><path d="m-2 1-9-9 10 4L5-13 6-3l10-2-9 8Z" fill="#8d9b70"/><g stroke="#ffe5b4" stroke-width="2.5" stroke-linecap="round"><path d="m-11 9 1 2m11 1 1 2m-8 7 1 2m15-16 1 2"/></g></g>
+          <g fill="#fff6e9"><circle cx="189" cy="295" r="8"/><circle cx="210" cy="303" r="8"/><circle cx="232" cy="307" r="8"/><circle cx="254" cy="309" r="8"/><circle cx="277" cy="310" r="8"/><circle cx="300" cy="308" r="8"/><circle cx="322" cy="305" r="8"/><circle cx="343" cy="299" r="8"/></g>
+          <text x="270" y="372" fill="#a05b7b" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-style="italic" font-size="24">for Thảo, with love</text>
+        </svg>
+        <div class="cake-caption"><span aria-hidden="true">♡</span> NGỌT NGÀO NHƯ CHÍNH EM</div>
+        <button class="cake-button" id="cake-button" type="button"><span class="candle-icon" aria-hidden="true">✧</span> Ước một điều & thổi nến <span aria-hidden="true">↗</span></button>
+      </div>
+      <a class="scroll-cue" href="#surprises"><span aria-hidden="true">↓</span> CÒN NHIỀU ĐIỀU XINH Ở DƯỚI</a>
+    </section>
+
+    <div class="birthday-ticker" aria-hidden="true"><div class="ticker-track"><span>HAPPY BIRTHDAY</span><b>✳</b><span>THẢO ƠI, CƯỜI LÊN NÀO</span><b>♡</b><span>MAKE A LITTLE WISH</span><b>✦</b><span>YOU ARE SO LOVED</span><b>✿</b><span>HAPPY BIRTHDAY</span><b>✳</b><span>THẢO ƠI, CƯỜI LÊN NÀO</span><b>♡</b><span>MAKE A LITTLE WISH</span><b>✦</b><span>YOU ARE SO LOVED</span><b>✿</b></div></div>
+
+    <section class="surprises-section wrap section-pad" id="surprises" aria-labelledby="surprises-title">
+      <div class="section-heading reveal"><div><p class="section-index">01 / NHỮNG MÓN QUÀ NHỎ</p><h2 id="surprises-title">Không cần to tát.<br />Chỉ cần <em>em vui.</em></h2></div><p>Có ba món quà anh giấu ở đây.<br />Chạm nhẹ để mở từng chút yêu thương nhé.</p></div>
+      <div class="gift-grid">
+        <button class="gift-card gift-hug reveal" data-gift="hug" type="button" aria-label="Mở món quà 01: Một cái ôm"><span class="gift-number">01</span><span class="gift-art hug-art" aria-hidden="true"><span class="hug-character hug-left"><i></i></span><span class="hug-character hug-right"><i></i></span><span class="hug-heart">♥</span><span class="hug-spark">✧</span></span><span class="gift-card-bottom"><span><small>KHI EM CẦN MỘT CHÚT ẤM ÁP</small><strong>Một cái ôm thật lâu</strong></span><span class="gift-open" aria-hidden="true">↗</span></span><span class="gift-status">Chạm để mở quà</span></button>
+        <button class="gift-card gift-flower reveal" data-gift="flower" type="button" aria-label="Mở món quà 02: Một vườn hoa"><span class="gift-number">02</span><span class="gift-art bouquet-art" aria-hidden="true"><svg viewBox="0 0 260 200"><g stroke="#6a8d65" stroke-width="3" fill="none"><path d="M130 174 98 63m32 111 31-111m-31 111-1-132m1 132L72 91m58 83 58-83"/><path d="M112 119q-39-32-35-3 9 16 40 19m31-16q39-32 35-3-9 16-40 19" fill="#9aac79"/></g><g class="bouquet-flower f1" transform="translate(97 59)" fill="#f296b4"><circle cy="-14" r="14"/><circle cx="14" cy="-4" r="14"/><circle cx="9" cy="13" r="14"/><circle cx="-9" cy="13" r="14"/><circle cx="-14" cy="-4" r="14"/><circle r="9" fill="#fff3b9"/></g><g class="bouquet-flower f2" transform="translate(162 62)" fill="#a68bce"><circle cy="-14" r="14"/><circle cx="14" cy="-4" r="14"/><circle cx="9" cy="13" r="14"/><circle cx="-9" cy="13" r="14"/><circle cx="-14" cy="-4" r="14"/><circle r="9" fill="#fff3b9"/></g><g class="bouquet-flower f3" transform="translate(129 34)" fill="#fff8e9"><ellipse cy="-13" rx="8" ry="13"/><ellipse cy="13" rx="8" ry="13"/><ellipse cx="-13" rx="13" ry="8"/><ellipse cx="13" rx="13" ry="8"/><ellipse rx="8" ry="13" transform="rotate(45) translate(0 -13)"/><ellipse rx="8" ry="13" transform="rotate(-45) translate(0 -13)"/><circle r="9" fill="#e8bd63"/></g><g transform="translate(72 91)" fill="#e8b45c"><circle cy="-9" r="9"/><circle cx="9" r="9"/><circle cy="9" r="9"/><circle cx="-9" r="9"/><circle r="6" fill="#fff4d1"/></g><g transform="translate(189 91)" fill="#ef9dba"><circle cy="-9" r="9"/><circle cx="9" r="9"/><circle cy="9" r="9"/><circle cx="-9" r="9"/><circle r="6" fill="#fff4d1"/></g><path d="m125 144-24-10q-17 23 24 18m10-8 24-10q17 23-24 18" fill="none" stroke="#ba7e9e" stroke-width="5" stroke-linecap="round"/><path d="m128 145-9 29m14-29 12 28" stroke="#ba7e9e" stroke-width="4"/></svg></span><span class="gift-card-bottom"><span><small>VÌ EM XỨNG ĐÁNG VỚI ĐIỀU ĐẸP ĐẼ</small><strong>Cả một vườn dịu dàng</strong></span><span class="gift-open" aria-hidden="true">↗</span></span><span class="gift-status">Chạm để mở quà</span></button>
+        <button class="gift-card gift-sparkle reveal" data-gift="star" type="button" aria-label="Mở món quà 03: Một bầu trời may mắn"><span class="gift-number">03</span><span class="gift-art star-art" aria-hidden="true"><svg viewBox="0 0 260 200"><path class="big-star" d="m130 27 21 46 51 7-37 36 9 51-44-24-44 24 9-51-37-36 51-7Z" fill="#f3c870" stroke="#d2a450" stroke-width="1.5"/><path d="M109 97v5m35-5v5" stroke="#927049" stroke-width="3" stroke-linecap="round"/><path d="M119 114q8 9 16 0" fill="none" stroke="#927049" stroke-width="2.5" stroke-linecap="round"/><g fill="#b69ad2"><path d="m52 31 4 12 12 4-12 4-4 12-4-12-12-4 12-4Z"/><path d="m204 126 4 12 12 4-12 4-4 12-4-12-12-4 12-4Z"/></g><g fill="#e8b782"><circle cx="203" cy="48" r="4"/><circle cx="53" cy="135" r="3"/><circle cx="187" cy="177" r="3"/></g><path d="M71 171q61 30 114-7" fill="none" stroke="#b69ad2" stroke-width="1.5" stroke-dasharray="4 6"/></svg></span><span class="gift-card-bottom"><span><small>GỬI EM MỘT CHÚT PHÉP MÀU</small><strong>Một trời đầy may mắn</strong></span><span class="gift-open" aria-hidden="true">↗</span></span><span class="gift-status">Chạm để mở quà</span></button>
+      </div>
+      <p class="gift-progress" id="gift-progress" aria-live="polite"><span>♡</span> Có những món quà không cần giấy gói.</p>
+    </section>
+
+    <section class="letter-section" id="letter" aria-labelledby="letter-title"><div class="wrap letter-layout">
+      <div class="letter-art reveal"><span class="letter-doodle" aria-hidden="true">a little love note</span><div class="envelope" aria-hidden="true"><div class="envelope-letter"><span>Gửi Thảo,</span><i></i><i></i><i></i><span class="paper-heart">♡</span></div><div class="envelope-back"></div><div class="envelope-front"></div><div class="envelope-seal">♥</div></div><span class="letter-art-star" aria-hidden="true">✧</span></div>
+      <div class="letter-copy reveal"><p class="section-index">02 / CÓ ĐIỀU MUỐN NÓI</p><h2 id="letter-title">Nếu lời thương<br />có thể <em>gói lại…</em></h2><p>…thì chiếc phong bì này chắc sẽ chẳng đóng nổi.<br />Anh không giỏi nói những điều thật lớn lao,<br />nhưng có vài điều muốn em luôn nhớ.</p><button class="button button-dark" id="open-letter" type="button">Đọc thư của anh <span aria-hidden="true">♡</span></button><span class="letter-postscript">Viết bằng tất cả sự chân thành.</span></div>
+    </div></section>
+
+    <section class="wish-section wrap section-pad" id="wish" aria-labelledby="wish-title">
+      <div class="wish-panel reveal"><span class="wish-deco wish-deco-one" aria-hidden="true">✧</span><span class="wish-deco wish-deco-two" aria-hidden="true">✦</span><span class="wish-deco wish-deco-three" aria-hidden="true">♡</span><p class="section-index">03 / MỘT ĐIỀU ƯỚC CHO TUỔI MỚI</p><h2 id="wish-title">Nhắm mắt lại.<br /><em>Điều kỳ diệu bắt đầu.</em></h2><p>Hãy gửi một điều ước vào vũ trụ.<br />Còn anh, anh ước những điều em mong sẽ thành sự thật.</p><form class="wish-form" id="wish-form"><label class="sr-only" for="wish-input">Điều ước của Thảo</label><input id="wish-input" name="wish" type="text" maxlength="240" placeholder="Tuổi mới, em ước rằng…" autocomplete="off" required /><button type="submit" aria-label="Gửi điều ước"><span aria-hidden="true">↗</span></button></form><p class="wish-note" id="wish-note" aria-live="polite">Chỉ lưu trong trình duyệt của em, như một bí mật nhỏ. <span aria-hidden="true">✧</span></p></div>
+      <button class="clear-wish" id="clear-wish" type="button" hidden>Xóa điều ước đã lưu</button>
+    </section>
+
+    <footer class="footer wrap"><div class="footer-main"><a class="brand" href="#"><span class="brand-flower" aria-hidden="true">✳</span> thảo’s day<span class="brand-period">.</span></a><p>Hôm nay, ngày mai, và thật nhiều ngày sau nữa.<br /><strong>Mong em luôn được yêu thương.</strong></p><button class="back-top" id="back-top" type="button" aria-label="Về đầu trang">↑</button></div><div class="footer-bottom"><span>ĐƯỢC LÀM VỚI RẤT NHIỀU <span class="footer-heart" aria-label="tình yêu">♥</span> DÀNH CHO THẢO</span><span>Happy you day, my favorite person.</span></div></footer>
+  </main>
+
+  <dialog class="modal gift-modal" id="gift-modal" aria-labelledby="gift-modal-title"><button class="modal-close" type="button" data-close aria-label="Đóng">×</button><div class="modal-decoration" id="gift-modal-icon" aria-hidden="true">♡</div><p class="section-index">MỘT MÓN QUÀ DÀNH RIÊNG CHO EM</p><h2 id="gift-modal-title"></h2><p class="modal-message" id="gift-modal-message"></p><button class="button button-dark" data-close type="button">Em nhận rồi <span aria-hidden="true">♡</span></button></dialog>
+
+  <dialog class="modal letter-modal" id="letter-modal" aria-labelledby="letter-modal-title"><button class="modal-close" type="button" data-close aria-label="Đóng thư">×</button><p class="section-index">MỘT LÁ THƯ NHỎ, MỘT TÌNH YÊU TO</p><h2 id="letter-modal-title">Gửi <em>Thảo của anh,</em></h2><div class="letter-body"><p>Chúc mừng sinh nhật em, cô gái anh thương. ♡</p><p>Hôm nay, anh muốn dành cho em một góc nhỏ thật xinh. Có bánh kem, có nến, có một chút nhạc, và có tất cả những điều dịu dàng anh muốn gửi đến em.</p><p>Tuổi mới, mong em cười nhiều hơn, ngủ thật ngon, ăn những món mình thích và đủ can đảm để làm những điều mình yêu. Mong những ngày mệt mỏi sẽ có một cái ôm, những lúc chông chênh sẽ có một bàn tay.</p><p>Em không cần lúc nào cũng phải mạnh mẽ hay hoàn hảo. Cứ là Thảo thôi, với những điều rất riêng của em. Như vậy đã đáng yêu lắm rồi.</p><p>Cảm ơn vì em đã có mặt trên thế giới này. Và cảm ơn vì đã để anh được thương em.</p><p class="letter-signature">Thương em thật nhiều,<br /><em>Người luôn đứng về phía em.</em><span aria-hidden="true">♡</span></p></div></dialog>
+
+  <dialog class="modal candle-modal" id="candle-modal" aria-labelledby="candle-modal-title"><button class="modal-close" type="button" data-close aria-label="Đóng">×</button><div class="modal-decoration candle-decoration" aria-hidden="true">✧</div><p class="section-index" id="candle-modal-eyebrow">KHOẢNH KHẮC CỦA RIÊNG EM</p><h2 id="candle-modal-title">Thảo ơi, <em>ước đi nào.</em></h2><p class="modal-message" id="candle-modal-message">Nhắm mắt một chút, nghĩ về điều em mong nhất.<br />Khi sẵn sàng, hãy thổi nến nhé!</p><div class="mini-candles" id="mini-candles" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span></div><button class="button button-dark" id="blow-candles" type="button">Phù… thổi nến thôi! <span aria-hidden="true">✧</span></button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
